@@ -194,7 +194,7 @@ forecast.onreadystatechange = function() {
 };
 
 function getForecast(){
-    forecast.open("GET", "http://api.openweathermap.org/data/2.5/onecall?lat=48.33&lon=17.17&exclude=minutely,daily&appid=b1c74e01998f6dc8db3e4c990f5f6964&units=metric&lang=sk", true);
+    forecast.open("GET", "//api.openweathermap.org/data/2.5/onecall?lat=48.33&lon=17.17&exclude=minutely,daily&appid=b1c74e01998f6dc8db3e4c990f5f6964&units=metric&lang=sk", true);
     forecast.send();
 
     var updated = new Date();
