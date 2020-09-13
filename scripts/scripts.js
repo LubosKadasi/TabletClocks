@@ -17,8 +17,7 @@ w_icons = {
     "13n": "snowy-6",	
     "50d": "day", 	            //mist 
     "50n": "night" 	
-}
-
+};
 
 /* 
     Canvas Clocks
@@ -189,6 +188,8 @@ forecast.onreadystatechange = function() {
             }
 
             document.getElementById("forecast").innerHTML = forecast_content;
+    } else {
+        document.getElementById('header').html = this.status;
     }
 };
 
