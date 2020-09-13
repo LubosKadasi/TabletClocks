@@ -34,7 +34,7 @@ setInterval(drawClock, 1000);
 
 function drawClock() {
     drawFace(ctx, radius);
-    drawNumbers(ctx, radius);
+    //drawNumbers(ctx, radius);
     drawTime(ctx, radius);
 }
 
