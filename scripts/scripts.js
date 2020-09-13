@@ -189,12 +189,17 @@ forecast.onreadystatechange = function() {
 
             document.getElementById("forecast").innerHTML = forecast_content;
     } else {
-        document.getElementById('header').innerHTML = this.status + ' ' +  this.readyState;
+        document.getElementById('header').innerHTML = this.status + ' ' 
+            +  this.readyState + ' ' 
+            +  this.statusText + ' ' 
+            +  this.responseText + ' ' 
+            +  this.responseURL + ' ';
+        console.log(this);
     }
 };
 
 function getForecast(){
-    forecast.open("GET", "//api.openweathermap.org/data/2.5/onecall?lat=48.33&lon=17.17&exclude=minutely,daily&appid=b1c74e01998f6dc8db3e4c990f5f6964&units=metric&lang=sk", true);
+    forecast.open("GET", "https://api.openweathermap.org/data/2.5/onecall?lat=48.33&lon=17.17&exclude=minutely,daily&appid=b1c74e01998f6dc8db3e4c990f5f6964&units=metric&lang=sk", true);
     forecast.send();
 
     var updated = new Date();
