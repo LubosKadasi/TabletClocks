@@ -14,7 +14,7 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/TabletClocks/images/TabletClocks.png",
+            "src": "https://luboskadasi.github.io/TabletClocks/images/TabletClocks.png",
             "sizes": "512x512",
             "type": "image/png"
         }
