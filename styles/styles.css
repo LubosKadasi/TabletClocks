@@ -1,0 +1,135 @@
+/* 
+    Define the "system" font family
+    https://css-tricks.com/snippets/css/system-font-stack/
+*/
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: transparent;
+  color: #fff;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: system;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  text-align: center;
+}
+
+aside {
+  width: 100%;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.clocks {
+  flex-basis: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+.clocks--canvas {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+  z-index: -1;
+  width: 200%;
+  height: auto;
+}
+.clocks--digital__time {
+  font-size: 8rem;
+  line-height: 100%;
+}
+.clocks--digital__date {
+  font-size: 3.5rem;
+}
+
+.weather {
+  flex-basis: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+.weather__desc {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+.weather__icon {
+  filter: sepia(80%);
+  vertical-align: middle;
+  transform: scale(2);
+  transform-origin: right;
+}
+.weather__temp {
+  font-size: 5rem;
+  line-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.forecast__hour {
+  padding: 0.5rem;
+  pointer-events: none;
+  text-align: center;
+}
+.forecast__icon {
+  filter: sepia(80%);
+}
+.forecast__time {
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.forecast__temp {
+  font-weight: 900;
+  white-space: nowrap;
+}
+.forecast__wind {
+  font-size: 80%;
+}
+
+footer {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  opacity: 0.5;
+  font-size: 80%;
+}

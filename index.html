@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="styles/styles.css">
+
 </head>
 <body>
-    <h1>Hello</h1>
+
+    <header></header>
+
+    <main>
+
+        <section class="clocks" id="clocks">
+    
+            <canvas class="clocks--canvas" id="clocks-canvas" width="1500" height="1500">
+            </canvas>
+    
+            <div class="clocks--digital" id="clocks-digital">
+            </div>
+    
+        </section>
+    
+        <section class="weather" id="weather"></section>
+    
+    </main>
+
+    <aside>
+        <section class="forecast" id="forecast"></section>
+    </aside>
+
+    <footer id="footer"></footer>
+
+    <script src="scripts/scripts.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+{
+    "dir": "ltr",
+    "lang": "Slovak",
+    "name": "TabletClocks",
+    "short_name": "TabletClocks",
+    "scope": "/TabletClocks/",
+    "display": "fullscreen",
+    "start_url": "https://luboskadasi.github.io/TabletClocks/",
+    "background_color": "#000",
+    "theme_color": "#000",
+    "description": "TabletClocks home project",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/TabletClocks/images/TabletClocks.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "url": "https://luboskadasi.github.io/TabletClocks/",
+    "screenshots": []
+}

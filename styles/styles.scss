@@ -1,0 +1,149 @@
+/* 
+    Define the "system" font family
+    https://css-tricks.com/snippets/css/system-font-stack/
+*/
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+// Reset
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+::selection{
+    background-color: transparent;
+    color: #fff;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: system;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header{
+
+}
+
+main{
+    flex-grow: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    text-align: center;
+}
+
+aside{
+    width: 100%;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.clocks{
+    flex-basis: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+    &--canvas{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: .15;
+        z-index: -1;
+        width: 200%;
+        height: auto;
+    }
+    &--digital{
+        &__time{
+            font-size: 8rem;
+            line-height: 100%;
+        }
+        &__date{
+            font-size: 3.5rem;
+        }
+    }
+}
+.weather{
+    flex-basis: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+    &__desc{
+        font-size: 2rem;
+        margin-bottom: .25rem;
+    }
+    &__icon{
+        filter: sepia(80%);
+        vertical-align: middle;
+        transform: scale(2);
+        transform-origin: right;
+    }    
+    &__temp{
+        font-size: 5rem;
+        line-height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__hum{
+
+    }
+    &__hum{
+
+    }
+}
+.forecast{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    &__hour{
+        padding: .5rem;
+        pointer-events: none;
+        text-align: center;
+    }
+    &__icon{
+        filter: sepia(80%);
+    }
+    &__time{
+        font-weight: 300;
+        margin-bottom: .5rem;
+    }
+    &__temp{
+        font-weight: 900;
+        white-space: nowrap;
+    }
+    &__wind{
+        font-size: 80%;
+    }
+}
+
+footer{
+    position: fixed;
+    right: .5rem;
+    bottom: .5rem;
+    opacity: .5;
+    font-size: 80%;
+}
