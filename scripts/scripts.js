@@ -192,7 +192,7 @@ forecast.onreadystatechange = function() {
         document.getElementById('header').innerHTML = this.status + ' ' 
             +  this.readyState + ' ' 
             +  this.statusText + ' ' 
-            +  this.responseText + ' ' 
+            //+  this.responseText + ' ' 
             +  this.responseURL + ' ';
         console.log(this);
     }
