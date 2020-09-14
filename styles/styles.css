@@ -34,6 +34,22 @@ body {
   flex-direction: column;
 }
 
+header{
+    position: fixed;
+    left: 0.5rem;
+    top: 0.5rem;
+    opacity: 0.5;
+    font-size: 80%;
+}
+
+footer {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  opacity: 0.5;
+  font-size: 80%;
+}
+
 main {
   flex-grow: 1;
   align-self: stretch;
@@ -123,13 +139,5 @@ aside {
   white-space: nowrap;
 }
 .forecast__wind {
-  font-size: 80%;
-}
-
-footer {
-  position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  opacity: 0.5;
   font-size: 80%;
 }
