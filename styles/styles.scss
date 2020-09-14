@@ -34,15 +34,26 @@ body{
     font-weight: 200;
     display: flex;
     flex-direction: column;
+}
 
+
+
+header, footer{
+    position: fixed;
+    opacity: 0;
+    font-size: 80%;
+    transition: opacity .3s;
 }
 
 header{
-    position: fixed;
     left: .5rem;
     top: .5rem;
-    opacity: .5;
-    font-size: 80%;
+    &:hover{
+        opacity: 1;
+        & ~ footer{
+            opacity: 1;
+        }
+    }
     span{
         display: inline-block;
         margin-right: 1rem;
@@ -50,11 +61,8 @@ header{
 }
 
 footer{
-    position: fixed;
     right: .5rem;
     bottom: .5rem;
-    opacity: .5;
-    font-size: 80%;
 }
 
 main{

@@ -34,12 +34,22 @@ body {
   flex-direction: column;
 }
 
-header {
+header, footer {
   position: fixed;
+  opacity: 0;
+  font-size: 80%;
+  transition: opacity 0.3s;
+}
+
+header {
   left: 0.5rem;
   top: 0.5rem;
-  opacity: 0.5;
-  font-size: 80%;
+}
+header:hover {
+  opacity: 1;
+}
+header:hover ~ footer {
+  opacity: 1;
 }
 header span {
   display: inline-block;
@@ -47,11 +57,8 @@ header span {
 }
 
 footer {
-  position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
-  opacity: 0.5;
-  font-size: 80%;
 }
 
 main {
