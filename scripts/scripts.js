@@ -144,7 +144,7 @@ forecast.onreadystatechange = function() {
                 ${data.current.weather[0].description}
             </div>
             <div class="weather__temp">
-                <img class="weather__icon" src="icons/animated/${w_icons[data.current.weather[0].icon]}.svg" width="64" height="64" alt="" />
+                <img class="weather__icon" src="icons/static/${w_icons[data.current.weather[0].icon]}.svg" width="64" height="64" alt="" />
                 ${data.current.temp.toFixed(1)} °C
             </div>
             <div class="weather__sun">
