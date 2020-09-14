@@ -189,7 +189,7 @@ forecast.onreadystatechange = function() {
 
             document.getElementById("forecast").innerHTML = forecast_content;
     } else {
-        document.getElementById('header').innerHTML = this.status + ' ' 
+        //document.getElementById('header').innerHTML = this.status + ' ' 
             //+  this.readyState + ' ' 
             //+  this.statusText + ' ' 
             //+  this.responseText + ' ' 
