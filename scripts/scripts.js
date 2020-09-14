@@ -23,6 +23,7 @@ w_icons = {
     "50n": "night" 	
 };
 
+
 /* 
     Canvas Clocks
     https://www.w3schools.com/graphics/canvas_clock_start.asp
@@ -103,6 +104,7 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.rotate(-pos);
 }
 
+
 /*
     Digital Clocks
 */
@@ -123,6 +125,7 @@ function digitalClocks() {
     `;
 
 };
+
 
 /*
     Weatheer widget
@@ -202,6 +205,28 @@ function getForecast(){
     document.getElementById('footer').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK', dateOptions);
 };
 
+
+/*
+    BG Image change - random Unsplash
+    https://source.unsplash.com/
+*/
+
+var bgImage = new XMLHttpRequest();
+bgImage.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+        var data = this.responseURL;
+
+        document.getElementById('bg-image').style.backgroundImage = 'url(' + data + ')';
+    }
+};
+
+function getBgImage(){
+    bgImage.open("GET", "//source.unsplash.com/random/1280x720", true);
+    bgImage.send();
+};
+
+
 /*
     Battery status
     https://googlechrome.github.io/samples/battery-status/
@@ -246,6 +271,7 @@ if ('getBattery' in navigator) {
         'this platform.');
 };
 
+
 ///////////////////////////////////////////////////////////////
 
 /*
@@ -267,10 +293,10 @@ var updateScreen = setInterval(function(){
     /* Weather & Forecast*/
     if (timer_counter % 600 == 0){
         getForecast();
+        getBgImage();
         timer_counter = 1;
-        document.getElementById('bg-image').style.backgroundImage = 'url(https://source.unsplash.com/random/1280x720)';
     }
-
+    
     /* Increase counter */
     timer_counter++;
 
