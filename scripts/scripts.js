@@ -141,10 +141,10 @@ forecast.onreadystatechange = function() {
 
         document.getElementById("weather").innerHTML = `
             <div class="weather__desc">
-                ${data.current.weather[0].description}
+                <img class="weather__icon" src="icons/static/${w_icons[data.current.weather[0].icon]}.svg" width="64" height="64" alt="" />
+                <span>${data.current.weather[0].description}</span>
             </div>
             <div class="weather__temp">
-                <img class="weather__icon" src="icons/static/${w_icons[data.current.weather[0].icon]}.svg" width="64" height="64" alt="" />
                 ${data.current.temp.toFixed(1)} °C
             </div>
             <div class="weather__sun">

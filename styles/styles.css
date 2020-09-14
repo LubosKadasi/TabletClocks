@@ -19,6 +19,12 @@
 
 html {
   height: 100%;
+  font-size: 3.2vw;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 1.7vw;
+  }
 }
 
 body {
@@ -35,15 +41,13 @@ body {
 }
 
 header, footer {
-  position: fixed;
   opacity: 0;
   font-size: 80%;
   transition: opacity 0.3s;
 }
 
 header {
-  left: 0.5rem;
-  top: 0.5rem;
+  padding: 0.5rem;
 }
 header:hover {
   opacity: 1;
@@ -57,6 +61,7 @@ header span {
 }
 
 footer {
+  position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
 }
@@ -80,6 +85,7 @@ aside {
 
 .clocks {
   flex-basis: 400px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,6 +111,7 @@ aside {
 
 .weather {
   flex-basis: 400px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,21 +119,26 @@ aside {
 }
 .weather__desc {
   font-size: 2rem;
-  margin-bottom: 0.25rem;
-}
-.weather__icon {
-  filter: sepia(80%);
-  vertical-align: middle;
-  transform: scale(2);
-  transform-origin: right;
-}
-.weather__temp {
-  font-size: 5rem;
-  line-height: 5rem;
+  line-height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.weather__icon {
+  filter: sepia(80%);
+  vertical-align: middle;
+  transform: scale(2.4);
+  transform-origin: right 35%;
+}
+.weather__temp {
+  font-size: 5rem;
+  line-height: 5rem;
+  margin: 1.5rem 0;
+}
+.weather__more {
+  line-height: 175%;
+}
+
 .forecast {
   display: flex;
   flex-direction: row;

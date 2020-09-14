@@ -21,6 +21,10 @@
 
 html{
     height: 100%;
+    font-size: 3.2vw;
+    @media screen and (min-width: 768px) {
+        font-size: 1.7vw;
+    }
 }
 
 body{
@@ -36,18 +40,14 @@ body{
     flex-direction: column;
 }
 
-
-
 header, footer{
-    position: fixed;
     opacity: 0;
     font-size: 80%;
     transition: opacity .3s;
 }
 
 header{
-    left: .5rem;
-    top: .5rem;
+    padding: .5rem;
     &:hover{
         opacity: 1;
         & ~ footer{
@@ -61,6 +61,7 @@ header{
 }
 
 footer{
+    position: fixed;
     right: .5rem;
     bottom: .5rem;
 }
@@ -84,6 +85,7 @@ aside{
 
 .clocks{
     flex-basis: 400px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,32 +112,31 @@ aside{
 }
 .weather{
     flex-basis: 400px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     pointer-events: none;
     &__desc{
         font-size: 2rem;
-        margin-bottom: .25rem;
-    }
-    &__icon{
-        filter: sepia(80%);
-        vertical-align: middle;
-        transform: scale(2);
-        transform-origin: right;
-    }    
-    &__temp{
-        font-size: 5rem;
-        line-height: 5rem;
+        line-height: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    &__hum{
-
+    &__icon{
+        filter: sepia(80%);
+        vertical-align: middle;
+        transform: scale(2.4);
+        transform-origin: right 35%;
+    }    
+    &__temp{
+        font-size: 5rem;
+        line-height: 5rem;
+        margin: 1.5rem 0;
     }
-    &__hum{
-
+    &__more{
+        line-height: 175%;
     }
 }
 .forecast{
