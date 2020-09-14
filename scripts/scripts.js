@@ -1,3 +1,7 @@
+/*
+    Custom weather Icons
+*/
+
 w_icons = {
     "01d": "day",   	        //clear sky
     "01n": "night", 	
@@ -29,13 +33,6 @@ var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
-setInterval(drawClock, 1000);
-
-function drawClock() {
-    drawFace(ctx, radius);
-    //drawNumbers(ctx, radius);
-    drawTime(ctx, radius);
-}
 
 function drawFace(ctx, radius) {
     var grad;
@@ -108,10 +105,9 @@ function drawHand(ctx, pos, length, width, color) {
 
 /*
     Digital Clocks
-
 */
 
-function startTime() {
+function digitalClocks() {
     var today = new Date();
     
     const dateOptions = { weekday: 'long', month: 'numeric', day: 'numeric' };
@@ -126,10 +122,7 @@ function startTime() {
         </div>
     `;
 
-    var t = setTimeout(startTime, 1000);
 };
-
-startTime();
 
 /*
     Weatheer widget
@@ -209,9 +202,33 @@ function getForecast(){
     document.getElementById('footer').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK', dateOptions);
 };
 
-getForecast();
+///////////////////////////////////////////////////////////////
 
-var updateWeather = setInterval(getForecast, 10*60*1000);
+/*
+    Main Timer
+*/
+
+var timer_counter = 600;
+
+var updateScreen = setInterval(function(){
+
+    /* Analog Clocks */
+    drawFace(ctx, radius);
+    //drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+    
+    /* Digital Clocks */
+    digitalClocks();
+    
+    /* Weather & Forecast*/
+    if (timer_counter % 600 == 0){
+        getForecast();
+        timer_counter = 1;
+    }
+
+    timer_counter++;
+
+}, 1000);
 
 
 
