@@ -38,7 +38,23 @@ body{
 }
 
 header{
+    position: fixed;
+    left: .5rem;
+    top: .5rem;
+    opacity: .5;
+    font-size: 80%;
+    span{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+}
 
+footer{
+    position: fixed;
+    right: .5rem;
+    bottom: .5rem;
+    opacity: .5;
+    font-size: 80%;
 }
 
 main{
@@ -138,12 +154,4 @@ aside{
     &__wind{
         font-size: 80%;
     }
-}
-
-footer{
-    position: fixed;
-    right: .5rem;
-    bottom: .5rem;
-    opacity: .5;
-    font-size: 80%;
 }

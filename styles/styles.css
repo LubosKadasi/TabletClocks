@@ -34,12 +34,16 @@ body {
   flex-direction: column;
 }
 
-header{
-    position: fixed;
-    left: 0.5rem;
-    top: 0.5rem;
-    opacity: 0.5;
-    font-size: 80%;
+header {
+  position: fixed;
+  left: 0.5rem;
+  top: 0.5rem;
+  opacity: 0.5;
+  font-size: 80%;
+}
+header span {
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 footer {
