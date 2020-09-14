@@ -87,8 +87,8 @@ function drawTime(ctx, radius){
     minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
     drawHand(ctx, minute, radius*0.8, radius*0.03, '#fff');
     // second
-    //second=(second*Math.PI/30);
-    //drawHand(ctx, second, radius*0.9, radius*0.01, '#f00');
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.01, '#fff');
 }
 
 function drawHand(ctx, pos, length, width, color) {
@@ -268,8 +268,10 @@ var updateScreen = setInterval(function(){
     if (timer_counter % 600 == 0){
         getForecast();
         timer_counter = 1;
+        document.getElementById('bg-image').style.backgroundImage = 'url(https://source.unsplash.com/random/1280x720)';
     }
 
+    /* Increase counter */
     timer_counter++;
 
 }, 1000);
