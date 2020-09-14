@@ -87,8 +87,8 @@ function drawTime(ctx, radius){
     minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
     drawHand(ctx, minute, radius*0.8, radius*0.03, '#fff');
     // second
-    second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.01, '#f00');
+    //second=(second*Math.PI/30);
+    //drawHand(ctx, second, radius*0.9, radius*0.01, '#f00');
 }
 
 function drawHand(ctx, pos, length, width, color) {
