@@ -85,6 +85,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  pointer-events: none;
 }
 
 aside {
@@ -99,7 +100,12 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  pointer-events: none;
+}
+.clocks:hover .clocks--digital {
+  transform: scale(1.3);
+}
+.clocks:hover ~ .weather {
+  transform: scale(0.8);
 }
 .clocks--canvas {
   position: fixed;
@@ -110,6 +116,10 @@ aside {
   z-index: -1;
   width: 200%;
   height: auto;
+}
+.clocks--digital {
+  transform-origin: left;
+  transition: all 0.3s;
 }
 .clocks--digital__time {
   font-size: 8rem;
@@ -126,6 +136,8 @@ aside {
   flex-direction: column;
   justify-content: center;
   pointer-events: none;
+  transform-origin: right;
+  transition: all 0.3s;
 }
 .weather__desc {
   font-size: 2rem;

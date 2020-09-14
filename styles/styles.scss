@@ -85,6 +85,7 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    pointer-events: none;
 }
 
 aside{
@@ -99,7 +100,15 @@ aside{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    pointer-events: none;
+    //pointer-events: none;
+    &:hover{
+        .clocks--digital{
+            transform: scale(1.3);
+        }
+        & ~ .weather{
+            transform: scale(.8);
+        }
+    }
     &--canvas{
         position: fixed;
         top: 50%;
@@ -111,6 +120,8 @@ aside{
         height: auto;
     }
     &--digital{
+        transform-origin: left;
+        transition: all .3s;
         &__time{
             font-size: 8rem;
             line-height: 100%;
@@ -127,6 +138,8 @@ aside{
     flex-direction: column;
     justify-content: center;
     pointer-events: none;
+    transform-origin: right;
+    transition: all .3s;
     &__desc{
         font-size: 2rem;
         line-height: 2rem;
