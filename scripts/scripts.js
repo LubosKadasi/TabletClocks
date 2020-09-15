@@ -1,3 +1,7 @@
+const timeOptions = { hour: 'numeric', minute: '2-digit' };
+const dateOptions = { weekday: 'long', month: 'numeric', day: 'numeric' };
+
+
 /*
     Custom weather Icons
 */
@@ -111,10 +115,7 @@ function drawHand(ctx, pos, length, width, color) {
 
 function digitalClocks() {
     var today = new Date();
-    
-    const dateOptions = { weekday: 'long', month: 'numeric', day: 'numeric' };
-    const timeOptions = { hour: '2-digit', minute: '2-digit' };
-    
+        
     document.getElementById("clocks-digital").innerHTML = `
         <div class="clocks--digital__time">
             ${today.toLocaleTimeString('sk-SK', timeOptions)}
@@ -137,34 +138,35 @@ forecast.onreadystatechange = function() {
 
         var data = JSON.parse(this.responseText),
             forecast_content = '',
-            _time_sunrise = new Date(data.current.sunrise * 1000);
+            _time_sunrise = new Date(data.current.sunrise * 1000),
             _time_sunset = new Date(data.current.sunset * 1000);
-
-        const timeOptions = { hour: '2-digit', minute: '2-digit' };
-
+        
         document.getElementById("weather").innerHTML = `
             <div class="weather__desc">
                 <img class="weather__icon" src="icons/static/${w_icons[data.current.weather[0].icon]}.svg" width="64" height="64" alt="" />
                 <span>${data.current.weather[0].description}</span>
             </div>
             <div class="weather__temp">
-                ${data.current.temp.toFixed(1)} °C
-            </div>
-            <div class="weather__sun">
-                <span class="weather__sunrise">
-                    východ slnka <strong>${_time_sunrise.toLocaleTimeString('sk-SK', timeOptions)}</strong>,
-                </span>
-                <span class="weather__sunset">
-                    západ slnka <strong>${_time_sunset.toLocaleTimeString('sk-SK', timeOptions)}</strong>
-                </span>     
+            ${data.current.temp.toFixed(1)} °C
             </div>
             <div class="weather__more">
                 <span class="weather__wind">
-                    <strong>${data.current.wind_speed} m/s</strong>,
+                    <strong>${data.current.wind_speed.toFixed(1)} m/s</strong>,
                 </span>
                 <span class="weather__hum">
                     vlhlkosť <strong>${data.current.humidity} %</strong>
                 </span>     
+            </div>
+            <div class="weather__sun">
+                <span class="weather__sunrise">
+                    úsvit <strong>${_time_sunrise.toLocaleTimeString('sk-SK', timeOptions)}</strong>,
+                </span>
+                <span class="weather__sunset">
+                    súmrak <strong>${_time_sunset.toLocaleTimeString('sk-SK', timeOptions)}</strong>
+                </span>     
+            </div>
+            <div class="weather__location">
+                Bratislava
             </div>
             `;
 
@@ -177,7 +179,7 @@ forecast.onreadystatechange = function() {
                         <img class="forecast__icon" src="icons/static/${w_icons[data.hourly[i].weather[0].icon]}.svg" width="50" height="50" alt="" />
                         <div class="forecast__time">${_time.toLocaleTimeString('sk-SK', timeOptions)}</div>
                         <div class="forecast__temp">${data.hourly[i].temp.toFixed(1)} °C</div>
-                        <div class="forecast__wind">${data.hourly[i].wind_speed} m/s</div>
+                        <div class="forecast__wind">${data.hourly[i].wind_speed.toFixed(1)} m/s</div>
                     </div>
                 `;
 
@@ -200,9 +202,7 @@ function getForecast(){
 
     var updated = new Date();
 
-    const dateOptions = { weekday: 'long', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit',};
-
-    document.getElementById('footer').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK', dateOptions);
+    document.getElementById('footer').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK');
 };
 
 
