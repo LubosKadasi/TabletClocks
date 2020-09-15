@@ -222,7 +222,7 @@ bgImage.onreadystatechange = function() {
 };
 
 function getBgImage(){
-    bgImage.open("GET", "//source.unsplash.com/random/1280x720/?nature,architecture,space,featured", true);
+    bgImage.open("GET", "//source.unsplash.com/random/1280x720/?nature,featured", true);
     bgImage.send();
 };
 
