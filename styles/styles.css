@@ -81,11 +81,25 @@ main {
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0.25;
+  opacity: 0.45;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.focus--clocks {
+  display: none;
+}
+.focus--clocks:checked ~ .clocks--digital, .focus--clocks:checked ~ * .clocks--digital {
+  transform: scale(1.3);
+}
+.focus--clocks:checked ~ .weather, .focus--clocks:checked ~ * .weather {
+  transform: scale(0.8);
+}
+.focus--clocks:checked ~ .bg__image, .focus--clocks:checked ~ * .bg__image {
+  opacity: 0.33;
 }
 
 aside {
@@ -101,12 +115,6 @@ aside {
   flex-direction: column;
   justify-content: center;
 }
-.clocks:hover .clocks--digital {
-  transform: scale(1.3);
-}
-.clocks:hover ~ .weather {
-  transform: scale(0.8);
-}
 .clocks--canvas {
   position: fixed;
   top: 50%;
@@ -118,8 +126,11 @@ aside {
   height: auto;
 }
 .clocks--digital {
+  display: block;
   transform-origin: left;
   transition: all 0.3s;
+  outline: none;
+  text-decoration: none;
 }
 .clocks--digital__time {
   font-size: 8rem;
@@ -135,7 +146,6 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  pointer-events: none;
   transform-origin: right;
   transition: all 0.3s;
 }

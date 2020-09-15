@@ -16,19 +16,16 @@
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 
-    <link rel="stylesheet" href="styles/styles.css?v=011">
+    <link rel="stylesheet" href="styles/styles.css?v=012">
 
 </head>
 <body>
 
-    <div class="bg__image" id="bg-image"></div>
+    <input type="checkbox" id="focus-clocks" class="focus--clocks" />
 
     <header id="header">
-        <span>v 011</span>
-        <span id="chargingState"></span>
-        <span id="chargingTime"></span>
-        <span id="dischargeTime"></span>
-        <span id="level"></span>
+        <span id="app-version">v 012</span>
+        <span id="battery-level"></span>
     </header>
 
     <main>
@@ -38,12 +35,12 @@
             <canvas class="clocks--canvas" id="clocks-canvas" width="1500" height="1500">
             </canvas>
     
-            <div class="clocks--digital" id="clocks-digital">
-            </div>
+            <label for="focus-clocks" class="clocks--digital" id="clocks-digital" tabindex="0">
+            </label>
     
         </section>
     
-        <section class="weather" id="weather"></section>
+        <label for="focus-clocks" class="weather" id="weather"></label>
     
     </main>
 
@@ -53,7 +50,9 @@
 
     <footer id="footer"></footer>
 
-    <script src="scripts/scripts.js?v=011"></script>
+    <div class="bg__image" id="bg-image"></div>
+
+    <script src="scripts/scripts.js?v=012"></script>
 
 </body>
 </html>
