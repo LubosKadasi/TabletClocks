@@ -41,12 +41,14 @@ body {
 }
 
 header, footer {
+  z-index: 100;
   opacity: 0;
   font-size: 80%;
   transition: opacity 0.3s;
 }
 
 header {
+  opacity: 0.35;
   padding: 0.5rem;
 }
 header:hover {
@@ -54,10 +56,6 @@ header:hover {
 }
 header:hover ~ footer {
   opacity: 1;
-}
-header span {
-  display: inline-block;
-  margin-right: 1rem;
 }
 
 footer {
@@ -81,15 +79,16 @@ main {
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0.45;
+  opacity: 0.66;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   pointer-events: none;
   transition: opacity 0.3s;
+  z-index: -1;
 }
 
-.focus--clocks {
+.focus__control {
   display: none;
 }
 .focus--clocks:checked ~ .clocks--digital, .focus--clocks:checked ~ * .clocks--digital {
@@ -101,11 +100,36 @@ main {
 .focus--clocks:checked ~ .bg__image, .focus--clocks:checked ~ * .bg__image {
   opacity: 0.33;
 }
+.focus--image__control {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 1000;
+  opacity: 0.15;
+}
+.focus--image:checked ~ .bg__image, .focus--image:checked ~ * .bg__image {
+  opacity: 1;
+}
 
 aside {
   width: 100%;
   overflow: auto;
   padding: 1rem;
+  z-index: 1;
+}
+aside:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 0px 150px 50px #000;
+  z-index: -1;
 }
 
 .clocks {
@@ -195,4 +219,14 @@ aside {
 }
 .forecast__wind {
   font-size: 80%;
+}
+
+.app--version {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.battery--level {
+  display: inline-block;
+  margin-right: 0.5rem;
 }

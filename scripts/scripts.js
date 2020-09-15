@@ -202,7 +202,7 @@ function getForecast(){
 
     var updated = new Date();
 
-    document.getElementById('footer').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK');
+    document.getElementById('app-updated').innerHTML = 'aktualizované: ' + updated.toLocaleString('sk-SK');
 };
 
 
@@ -232,7 +232,7 @@ function getBgImage(){
     https://googlechrome.github.io/samples/battery-status/
 */
 
-var levelEl = document.getElementById('level');
+var levelEl = document.getElementById('battery-level');
 
 function updateBatteryUI(battery) {
     levelEl.textContent = (battery.level * 100) + '%';

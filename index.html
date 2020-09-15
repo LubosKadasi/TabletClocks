@@ -16,16 +16,17 @@
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 
-    <link rel="stylesheet" href="styles/styles.css?v=014">
+    <link rel="stylesheet" href="styles/styles.css?v=015">
 
 </head>
 <body>
 
-    <input type="checkbox" id="focus-clocks" class="focus--clocks" />
+    <input type="radio" name="focus" id="focus-clocks" class="focus__control focus--clocks" />
+    <input type="radio" name="focus" id="focus-other" class="focus__control focus--other" />
+    <input type="radio" name="focus" id="focus-image" class="focus__control focus--image" />
 
     <header id="header">
-        <span id="app-version">v 014</span>
-        <span id="battery-level"></span>
+        <span class="battery--level" id="battery-level"></span>
     </header>
 
     <main>
@@ -40,7 +41,7 @@
     
         </section>
     
-        <label for="focus-clocks" class="weather" id="weather"></label>
+        <label for="focus-other" class="weather" id="weather"></label>
     
     </main>
 
@@ -48,11 +49,16 @@
         <section class="forecast" id="forecast"></section>
     </aside>
 
-    <footer id="footer"></footer>
+    <label for="focus-image" class="focus--image__control"></label>
+
+    <footer>
+        <span class="app--version" id="app-version">v 015</span>
+        <span class="app--updated" id="app-updated"></span>
+    </footer>
 
     <div class="bg__image" id="bg-image"></div>
 
-    <script src="scripts/scripts.js?v=014"></script>
+    <script src="scripts/scripts.js?v=015"></script>
 
 </body>
 </html>
