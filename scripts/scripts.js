@@ -228,6 +228,28 @@ function getBgImage(){
 
 
 /*
+    Meniny
+*/
+
+var meniny = new XMLHttpRequest();
+meniny.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        var data = JSON.parse(this.responseText),
+            today = new Date();
+            tday = today.getDate(),
+            tmonth = today.getMonth() + 1;
+
+        document.getElementById("clocks-meniny").innerHTML = data[tmonth][tday];
+    }
+};
+
+function getMeniny(){
+    meniny.open("GET", "scripts/meniny.json", true);
+    meniny.send();
+};
+
+
+/*
     Battery status
     https://googlechrome.github.io/samples/battery-status/
 */
@@ -250,8 +272,7 @@ function monitorBattery(battery) {
 if ('getBattery' in navigator) {
     navigator.getBattery().then(monitorBattery);
 } else {
-    console.log('The Battery Status API is not supported on ' +
-        'this platform.');
+    console.log('The Battery Status API is not supported on this platform.');
 };
 
 
@@ -277,6 +298,7 @@ var updateScreen = setInterval(function(){
     if (timer_counter % 600 == 0){
         getForecast();
         getBgImage();
+        getMeniny();
         timer_counter = 1;
     }
     
