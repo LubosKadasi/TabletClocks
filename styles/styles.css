@@ -163,6 +163,9 @@ aside:before {
 .clocks--digital__date {
   font-size: 3.5rem;
 }
+.clocks--meniny {
+  font-size: 1.5rem;
+}
 
 .weather {
   flex-basis: 400px;

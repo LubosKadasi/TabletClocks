@@ -294,7 +294,7 @@ var updateScreen = setInterval(function(){
     /* Digital Clocks */
     digitalClocks();
     
-    /* Weather & Forecast*/
+    /* Weather & Forecast */
     if (timer_counter % 600 == 0){
         getForecast();
         getBgImage();
