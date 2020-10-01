@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>TabletClocks</title>
-
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-
     <script type="module">
         import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
         const el = document.createElement('pwa-update');
         document.body.appendChild(el);
     </script>
-
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 
-    <link rel="stylesheet" href="styles/styles.css?v=017">
+    <link rel="stylesheet" href="styles/styles.css?v=018">
 
 </head>
 <body>
 
-    <input type="radio" name="focus" id="focus-clocks" class="focus__control focus--clocks" />
+    <input type="radio" name="focus" id="focus-clocks" class="focus__control focus--clocks" checked />
     <input type="radio" name="focus" id="focus-other" class="focus__control focus--other" />
     <input type="radio" name="focus" id="focus-image" class="focus__control focus--image" />
+
+    <input type="checkbox" name="focus-cpanel" id="focus-cpanel" class="focus__control focus--cpanel" />
+    
+    <div class="bg__image" id="bg-image"></div>
 
     <header id="header">
         <span class="battery--level" id="battery-level"></span>
@@ -32,16 +33,13 @@
     <main>
 
         <section class="clocks" id="clocks">
-    
             <canvas class="clocks--canvas" id="clocks-canvas" width="1500" height="1500">
             </canvas>
-    
+
             <label for="focus-clocks" class="clocks--digital" tabindex="0">
                 <div id="clocks-digital" ></div>
                 <div class="clocks--meniny" id="clocks-meniny" ></div>
             </label>
-
-    
         </section>
     
         <label for="focus-other" class="weather" id="weather"></label>
@@ -55,13 +53,17 @@
     <label for="focus-image" class="focus--image__control"></label>
 
     <footer>
-        <span class="app--version" id="app-version">v 017</span>
+        <span class="app--version" id="app-version">v 018</span>
         <span class="app--updated" id="app-updated"></span>
     </footer>
 
-    <div class="bg__image" id="bg-image"></div>
+    <label for="focus-cpanel" class="cpanel__control">...</label>
 
-    <script src="scripts/scripts.js?v=017"></script>
+    <div class="cpanel">
+        <button type="button" class="cpanel__button" onclick="sendCommand('http://stick/shutdown')">Vypnúť rozprávky</button>
+    </div>
+
+    <script src="scripts/scripts.js?v=018"></script>
 
 </body>
 </html>

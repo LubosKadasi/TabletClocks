@@ -275,6 +275,24 @@ if ('getBattery' in navigator) {
     console.log('The Battery Status API is not supported on this platform.');
 };
 
+/*
+    Shutdown PC
+*/
+
+var pcCommand = new XMLHttpRequest();
+pcCommand.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        //ok
+    } else {
+        //
+    }
+};
+
+function sendCommand(command){
+    pcCommand.open("GET", command, true);
+    pcCommand.send();
+};
+
 
 ///////////////////////////////////////////////////////////////
 
