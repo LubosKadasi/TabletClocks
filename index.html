@@ -13,7 +13,8 @@
     </script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 
-    <link rel="stylesheet" href="styles/styles.css?v=019">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css?v=020">
 
 </head>
 <body>
@@ -53,17 +54,28 @@
     <label for="focus-image" class="focus--image__control"></label>
 
     <footer>
-        <span class="app--version" id="app-version">v 019</span>
+        <span class="app--version" id="app-version">v 020</span>
         <span class="app--updated" id="app-updated"></span>
     </footer>
 
-    <label for="focus-cpanel" class="cpanel__control">...</label>
+    <label for="focus-cpanel" class="cpanel__control"><span class="icon material-icons">more_horiz</span></label>
 
     <div class="cpanel">
-        <button type="button" class="cpanel__button" onclick="sendCommand('https://stick/shutdown')">Vypnúť rozprávky</button>
+        <button type="button" id="shutdownStick" class="cpanel__button" data-command="https://stick/shutdown">
+            <span class="icon material-icons">power_settings_new</span>
+            Vypnúť rozprávky
+        </button>
+
+        <button type="button" id="play-junior" class="cpanel__button">
+            <img src="images/RTVS-RadioJunior-Logo.png" alt="Rádio Junior">
+        </button>
     </div>
 
-    <script src="scripts/scripts.js?v=019"></script>
+    <audio id="radio-player" controls>
+        <source src="https://icecast.stv.livebox.sk/junior_128.mp3" type="audio/mpeg">
+    </audio>
+
+    <script type="module" src="scripts/scripts.js?v=020"></script>
 
 </body>
 </html>

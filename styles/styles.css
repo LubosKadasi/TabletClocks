@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* 
     Define the "system" font family
     https://css-tricks.com/snippets/css/system-font-stack/
@@ -217,13 +216,13 @@ aside:before {
   left: 0;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
   transition: all 0.3s;
   transform: translate3d(0, 100%, 0);
-  padding: 1rem 7rem;
+  padding: 1rem 7rem 1rem 1rem;
 }
 .cpanel__control {
   position: fixed;
@@ -232,38 +231,45 @@ aside:before {
   top: 1rem;
   width: 5rem;
   height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.25);
   text-align: center;
-  font-size: 5rem;
-  line-height: 1.15rem;
   opacity: 0.25;
   transition: all 0.3s;
 }
+.cpanel__control .icon {
+  font-size: 4rem;
+}
 .cpanel__button {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   appearance: none;
-  padding: 0;
-  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
   border: none;
-  color: #fff;
-  font-size: 2rem;
-  line-height: 5rem;
-  font-weight: 200;
-  flex-grow: 1;
-  text-transform: uppercase;
+  color: #000;
+  font-size: 1.5rem;
+  letter-spacing: -0.05rem;
+  font-weight: 600;
+  width: 25%;
+  height: 30vh;
+  margin: 0.25rem;
 }
 .cpanel__button:focus {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: white;
 }
-.cpanel__button:before {
-  content: "»";
+.cpanel__button .icon {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+}
+.cpanel__button img {
   display: block;
-  width: 7rem;
-  background-color: orangered;
-  height: 100%;
-  margin-right: 2rem;
-  font-size: 2.5rem;
+  max-width: 100%;
 }
 
 /*
@@ -276,7 +282,7 @@ aside:before {
   font-size: 13rem;
 }
 .focus--clocks:checked ~ .clocks--digital__time, .focus--clocks:checked ~ * .clocks--digital__time {
-  font-weight: 600;
+  font-weight: 400;
 }
 .focus--clocks:checked ~ .weather, .focus--clocks:checked ~ * .weather {
   transform: scale(0.8);
@@ -305,4 +311,19 @@ aside:before {
 }
 .focus--cpanel:checked ~ .cpanel__control, .focus--cpanel:checked ~ * .cpanel__control {
   opacity: 1;
+}
+audio {
+  display: block;
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 1000;
+}
+audio.playing {
+  opacity: 0.25;
+}
+audio.playing:hover {
+  opacity: 0.75;
 }

@@ -214,14 +214,14 @@ aside{
     left: 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0.9);
     opacity: 0;
     transition: all .3s;
     //background-color: fuchsia;
     transform: translate3d(0,100%,0);
-    padding: 1rem 7rem;
+    padding: 1rem 7rem 1rem 1rem;
     &__control{
         position: fixed;
         z-index: 1050;
@@ -229,37 +229,45 @@ aside{
         top: 1rem;
         width: 5rem;
         height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 50%;
         background-color: rgba(255, 255, 255, 0.25);
         text-align: center;
-        font-size: 5rem;
-        line-height: 1.15rem;
         opacity: .25;
         transition: all .3s;
+        .icon{
+            font-size: 4rem;
+        }
     }
     &__button{
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         appearance: none;
-        padding: 0;
-        background-color: rgba(255, 255, 255, 0.25);
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, .9);
         border: none;
-        color: #fff;
-        font-size: 2rem;
-        line-height: 5rem;
-        font-weight: 200;
-        flex-grow: 1;
-        text-transform: uppercase;
+        color: #000;
+        font-size: 1.5rem;
+        letter-spacing: -.05rem;
+        font-weight: 600;
+        //text-transform: uppercase;
+        width: 25%;
+        height: 30vh;
+        margin: .25rem;
         &:focus{
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 1);
         }
-        &:before{
-            content: "\00BB";
+        .icon{
+            font-size: 5rem;
+            margin-bottom: .5rem;
+        }
+        img{
             display: block;
-            width: 7rem;
-            background-color: orangered;
-            height: 100%;
-            margin-right: 2rem;
-            font-size: 2.5rem;
+            max-width: 100%;
         }
     }
 }
@@ -278,7 +286,7 @@ aside{
                 //transform: scale(1.5);
                 font-size: 13rem;
                 &__time{
-                    font-weight: 600;
+                    font-weight: 400;
                 }
             }
             .weather{
@@ -322,6 +330,22 @@ aside{
             main, main+aside{
 
             }
+        }
+    }
+}
+
+audio{
+    display: block;
+    position: fixed;
+    top: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 1000;
+    &.playing{
+        opacity: .25;
+        &:hover{
+            opacity: .75;
         }
     }
 }
